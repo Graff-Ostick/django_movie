@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=100, verbose_name='Имя')),
                 ('tagline', models.CharField(default='', max_length=100, verbose_name='Слоган')),
                 ('description', models.TextField(verbose_name='Описание')),
-                ('poster', models.ImageField(upload_to='movies', verbose_name='Постер')),
+                ('poster', models.ImageField(upload_to='movies_app', verbose_name='Постер')),
                 ('year', models.PositiveSmallIntegerField(default=2020, verbose_name='Год')),
                 ('country', models.CharField(max_length=100, verbose_name='Страна')),
                 ('world_premiere', models.DateTimeField(default=datetime.date.today, verbose_name='Премьера в мире')),

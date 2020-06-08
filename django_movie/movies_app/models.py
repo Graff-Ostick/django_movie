@@ -2,6 +2,9 @@ from django.db import models
 from datetime import date
 
 # Create your models here.
+from django.urls import reverse
+
+
 class Category(models.Model):
 
     name = models.CharField("Категория", max_length=150)
@@ -44,7 +47,7 @@ class Movie(models.Model):
     title = models.CharField("Имя", max_length=100)
     tagline = models.CharField("Слоган", max_length=100, default="")
     description = models.TextField("Описание")
-    poster = models.ImageField("Постер", upload_to="movies")
+    poster = models.ImageField("Постер", upload_to="movies_app")
     year = models.PositiveSmallIntegerField("Год", default=2020)
     country = models.CharField("Страна", max_length=100)
     directors = models.ManyToManyField(Actor, verbose_name="режиссер", related_name="film_director")
@@ -61,6 +64,9 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('movie_detail', kwargs={'slug': self.url})
 
     class Meta:
         verbose_name = "Фильм"
