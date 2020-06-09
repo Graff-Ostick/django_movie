@@ -73,6 +73,8 @@ body {
   outline: 0 !important;
 }
 
+
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -209,6 +211,7 @@ img {
   vertical-align: middle;
   border-style: none;
 }
+
 
 svg:not(:root) {
   overflow: hidden;
@@ -479,6 +482,12 @@ mark,
 
 .img-fluid {
   max-width: 100%;
+  height: auto;
+}
+
+
+.img-movie-shots {
+  max-width: 30%;
   height: auto;
 }
 
